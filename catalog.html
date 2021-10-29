@@ -3,9 +3,11 @@
     <head>
         <meta charset="utf-8">
         
-        <title>Главная страница проекта</title>
+        <title>Каталог товаров</title>
         
         <link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/style2.css">
+		 <link rel="stylesheet" type="text/css" href="css/style1.css">
 		<link rel="stylesheet" href="css/animations.css">
 		<link rel="stylesheet" href="css/adaptive.css">
         <script src="js/jquery-3.6.0.min.js"></script>
@@ -43,17 +45,19 @@
                     <nav class="topmenu">
 						
 						
-                        <a href="index.html" class="menu">Главная страница</a>
+                        <a href="catalog.html" class="button2">Каталог товаров</a>
+						
+                        <a href="index.html" class="button2">Главная страница</a>
                         
                         
                         
-                        <a href="item.html" class="menu">Товар</a>
+                        <a href="item.html" class="button2">Товар</a>
                         
                        
-						<a href="order.html" class="menu">Оплата и доставка</a>
+						<a href="order.html" class="button2">Оплата и доставка</a>
                         
-                        <a href="contacts.html" class="menu">Контакты</a>
-						 <a href="order.html" class="menu">Корзина</a>
+                        <a href="contacts.html" class="button2">Контакты</a>
+						 <a href="order.html" class="button2">Корзина</a>
                     </nav>
                 </div>
 				
@@ -64,135 +68,118 @@
         </header>
         
         <main>
-           <main>
+           
             <section class="catalog">
                 <div class="container">
                     <aside>
-                        <nav class="catmenu">
-							<ul>
-			       
-								<li><a href="#">Каталог товаров</a>
-			
-									<!-- первый уровень выпадающего списка -->
-									<ul>
-										<li><a href="#">Корма для собак</a>
-										<ul>
-												<li><a href="#">Сухие корма</a></li>
-												<li><a href="#">Консервы</a></li>
-												
-											</ul>
-										</li>
-										<li><a href="#">Корма для кошек</a></li>
-										<li><a href="#">Корма для птиц</a>
-						
-											<!-- второй уровень выпадающего списка -->
-											<ul>
-												<li><a href="#">Готовые смеси</a></li>
-												<li><a href="#">Лакомства</a></li>
-												
-											</ul>
-										</li>
-			        
-									</ul>
-								</li>
-							</ul>		
-						</nav>
+                       <div id="dd" class="wrapper-dropdown" tabindex="1">
+						<span>Каталог товаров</span>
+						<ul class="dropdown">
+							<li><a href="#">Для собак</a></li>
+							<li><a href="#">Для кошек</a></li>
+							<li><a href="#">Для грызунов</a></li>
+							<li><a href="#">Для птиц</a></li>
+							<li><a href="#">Аквариумистика</a></li>
+							<li><a href="#">Ветаптека</a></li>
+							
+						</ul>
+					</div>
                     </aside>
                     
                     <article>
-                        <h1>Распродажа</h1>
+                        <div class="sale"></div>
                         
                         <div class="item-desk">
                             <div class="item">
                                 <h3>Шампунь для собак  BEAPHAR Pro Vitamin 250мл</h3>
                                 <img src="images/sale1.jpg" alt="sale1">
-                                <p>Шампунь представляет собой жидкость желтого цвета с цветочным запахом. </p>
-                                <button type="button">Купить</button>
+                                <p>Шампунь представляет собой жидкость желтого цвета. </p><br>
+                                <a href="#" class="button1">809 &#8381;</a>
+								
                             </div>
                             
                             <div class="item">
                                 <h3>Капли ушные ТОП-ВЕТ Амитразин, 10мл</h3>
                                 <img src="images/sale2.jpg" alt="sale2">
-                                <p>Амитраза, масляный линимент с акарицидным действием на все виды клещей у собак и кошек<p>
-                                <button type="button">Купить</button>
+                                <p>Амитраза, масляный линимент с акарицидным действием.<p><br>
+                                <a href="#" class="button1">125 &#8381;</a>
                             </div>
                             
                             <div class="item">
-                                <h3>Беговая дорожка TRIXIE Диск. <br>Ф30см</h3>
+                                <h3>Беговая дорожка TRIXIE Диск <br>Ф30см</h3>
                                 <img src="images/sale3.jpg" alt="sale3">
-                                <p>Беговая дорожка TRIXIE Диск. Для мелких животных,<br> Ф30см</p>
-                                <button type="button">Купить</button>
+                                <p>Беговая дорожка TRIXIE Диск. Для мелких животных,<br> Ф30см.</p><br>
+                                <a href="#" class="button1">1999 &#8381;</a>
                             </div>
                             
                             <div class="item">
                                 <h3>Корм для кошек ANIMONDA CARNY ADULT  </h3>
                                 <img src="images/sale4.jpg" alt="sale4">
-                                <p>Коктейль из разных сортов мяса для взрослых кошек <br> консервы 200гр </p>
-                                <button type="button">Купить</button>
+                                <p>Коктейль из разных сортов мяса для взрослых кошек <br> консервы 200гр. </p><br>
+                                <a href="#" class="button1">155 &#8381;</a>
                             </div>
                             
                             <div class="item">
                                 <h3>Комбинезон для собак DOGMODA цветы - 28см</h3>
                                 <img src="images/sale5.jpg" alt="sale5">
-                                <p>Изготовлен из полиэстера, защищающего от ветра и осадков.</p>
-                                <button type="button">Купить</button>
+                                <p>Изготовлен из полиэстера, защищающего от ветра и осадков.</p><br>
+                                <a href="#" class="button1">1499 &#8381;</a>
                             </div>
                             
                             <div class="item">
-                                <h3>Антигельминтик для кошек BAYER Дронтал, 2 таблетки </h3>
+                                <h3>Антигельминтик для кошек BAYER Дронтал </h3>
                                 <img src="images/sale6.jpg" alt="sale6">
-                                <p>Таблетки Дронтал - продукт, помогающий вам защитить кошку от внутренних паразитов.
-</p>
-                                <button type="button">Купить</button>
+                                <p>Продукт, помогающий вам защитить кошку от внутренних паразитов.</p><br>
+                                <a href="#" class="button1">399 &#8381;</a>
                             </div>
                             
                             <div class="item">
                                 <h3>Переноска для животных 10 EL 48x32,5х29см</h3>
                                 <img src="images/sale7.jpg" alt="sale7">
-                                <p>Переноска для маленьких собак и кошек и других небольших животных, пластиковая.   </p>
-                                <button type="button">Купить</button>
+                                <p>Переноска для маленьких собак и кошек и других небольших животных.   </p><br>
+                                <a href="#" class="button1">5999 &#8381;</a>
                             </div>
                             
                             <div class="item">
                                 <h3>Щетка-пуходерка для собак FERPLAST M </h3>
                                 <img src="images/sale8.jpg" alt="sale8">
-                                <p>Изогнутые зубчики обеспечивают глубокое расчесывание, не раздражая кожу. </p>
-                                <button type="button">Купить</button>
+                                <p>Изогнутые зубчики обеспечивают глубокое расчесывание. </p><br>
+                                <a href="#" class="button1">500 &#8381;</a>
                             </div>
                             
                             <div class="item">
                                 <h3>Мяч на веревке суперпрочный из резины 50см</h3>
                                 <img src="images/sale9.jpg" alt="sale9">
-                                <p>Игрушки из коллекции N-Gage предназначены для активных игр с собакой во время прогулок.</p>
-                                <button type="button">Купить</button>
+                                <p>Предназначена для активных игр с собакой во время прогулок.</p><br>
+                                <a href="#" class="button1">879 &#8381;</a>
                             </div>
                             
                             <div class="item">
                                 <h3>Мяч светящийся с ручкой на веревке, черный 17см</h3>
                                 <img src="images/sale10.jpg" alt="sale10">
-                                <p>Уникальная форма мяча удобна для захвата челюстями, что позволяет собаке носить его во рту. </p>
-                                <button type="button">Купить</button>
+                                <p>Уникальная форма мяча удобна для захвата челюстями, что позволяет собаке носить его во рту. </p><br>
+                                <a href="#" class="button1">2750 &#8381;</a>
                             </div>
                             
                             <div class="item">
                                 <h3>Дразнилка-рыбка на палец 7см, серия Feather Teaser</h3>
                                 <img src="images/sale11.jpg" alt="sale11">
-                                <p>Игрушка надевается на палец или прикрепляется на ручку двери. Длина резинки - 0,5м. </p>
-                                <button type="button">Купить</button>
+                                <p>Игрушка надевается на палец или прикрепляется на ручку двери. Длина резинки - 0,5м. </p><br>
+                                <a href="#" class="button1">339 &#8381;</a>
                             </div>
                             
                             <div class="item">
                                 <h3>Софа для животных коричневая, с подушкой</h3>
                                 <img src="images/sale12.jpg" alt="sale12">
-                                <p>Лежак с прочными бортиками для собак в комплекте с двухсторонней подушкой.</p>
-                                <button type="button">Купить</button>
+                                <p>Лежак с прочными бортиками для собак в комплекте с двухсторонней подушкой.</p><br>
+                                <a href="#" class="button1">4290 &#8381;</a>
                             </div>
                         </div>
                     </article>
                 </div>
             </section>
         </main> 
-         </main>
+         
         
         <footer>
               
@@ -249,5 +236,52 @@
                 </div>
 			    <p class="copy">&copy; 2021 All rights reserved.</p>
         </footer>
+		<script src="jquery-3.6.0.min.js"></script>
+		<script type="text/javascript">
+			
+			function DropDown(el) {
+				this.dd = el;
+				this.placeholder = this.dd.children('span');
+				this.opts = this.dd.find('ul.dropdown > li');
+				this.val = '';
+				this.index = -1;
+				this.initEvents();
+			}
+			DropDown.prototype = {
+				initEvents : function() {
+					var obj = this;
+
+					obj.dd.on('click', function(event){
+						$(this).toggleClass('active');
+						return false;
+					});
+
+					obj.opts.on('click',function(){
+						var opt = $(this);
+						obj.val = opt.text();
+						obj.index = opt.index();
+						obj.placeholder.text(obj.val);
+					});
+				},
+				getValue : function() {
+					return this.val;
+				},
+				getIndex : function() {
+					return this.index;
+				}
+			}
+
+			$(function() {
+
+				var dd = new DropDown( $('#dd') );
+
+				$(document).click(function() {
+					// all dropdowns
+					$('.wrapper-dropdown-3').removeClass('active');
+				});
+
+			});
+
+		</script>
     </body>
 </html>

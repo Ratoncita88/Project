@@ -1,4 +1,5 @@
- html {
+
+html {
 	height: 100%;
 }
 body {
@@ -6,6 +7,7 @@ body {
     min-height: 100%;
 	display: flex;
     flex-direction: column;
+	font: 15px/24px "Open Sans", Arial, sans-serif;
 }
 a {
 	text-decoration: none;
@@ -64,7 +66,7 @@ main {
 }
 
 .searchline{
-	/*flex:1 1 auto;*/
+	flex:1 1 auto;
 	background: #e5e5e5;
 	height: 50px;
 	width: 700px;
@@ -306,72 +308,7 @@ footer .copy {
 		left: 550px;
 	}
 
-		/* задаем цвет фона для контейнера nav. */
-			.catmenu {
-			    margin: 100px 12px;
-			    background-color: red;
-				width: 170px;
-			}
-			
-			/* убираем отступы и поля, а также list-style для "ul", 
-			 * и добавляем "position:relative" */
-			nav ul {
-			    padding:0;
-			    margin:0;
-			    list-style: none;
-			    position: relative;
-			    }
-			
-			/* применяем inline-block позиционирование к элементам навигации */
-			nav ul li {
-			    margin: 0px -7px 0 0;
-			    display:inline-block;
-			    background-color: red;
-			    }
-			
-			/* стилизуем ссылки */
-			nav a {
-			    display:block;
-			    padding:0 10px;
-			    color:#FFF;
-			    font-size:20px;
-			    line-height: 60px;
-			    text-decoration:none;
-			}
-			
-			/* изменяем цвет фона при наведении курсора */
-			nav a:hover {
-			    background-color: #007d86;
-		}
-		/* скрываем выпадающие списки по умолчанию
-			 * и задаем абсолютное позиционирование */
-			nav ul ul {
-			    display: none;
-			    position: absolute;
-			    top: 100%;
-			}
-			
-			/* отображаем выпадающий список при наведении */
-			nav ul li:hover > ul {
-			    display:inherit;
-			}
-			
-			/* первый уровень выпадающего списка */
-			nav ul ul li {
-			    min-width:170px;
-			    float:none;
-			    display:list-item;
-			    position: relative;
-			}
-			/* второй, третий и последующие уровни 
-			 * смещаем 2 и 3 уровни влево 
-			 * на значение длины первого уровня.
-			*/
-			nav ul ul ul {
-			    position: absolute;
-			    top:0;
-			    left:100%;
-		}
+
 /* catalog */
 .item-desk {
 	display: grid;
@@ -379,6 +316,7 @@ footer .copy {
 	grid-template-rows: auto;
 	justify-content: space-evenly;
 	row-gap: 20px;
+	margin-top: 10px;
 }
 .item {
 	width: 180px;
@@ -387,14 +325,43 @@ footer .copy {
 .item h3 {
 	margin-top: 0;
 }
-.item button {
-	width: 100%;
-	line-height: 2;
-	text-transform: uppercase;
-	cursor: pointer;
-	background:#007d86;;
-	border-radius:1px;
-	color: white;
+
+
+a.button1 {
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  color: black;
+  font-size: 135%;
+  font-weight: 700;
+  text-decoration: none;
+  padding: .25em .5em;
+}
+a.button1:after {
+  content: "Купить";  
+  position: absolute;
+  z-index: -1;
+  top: -2px;
+  bottom: -2px;
+  left: -2px;
+  width: calc(100% + 6*(1em*105/135) - 2px*2*2);  
+  text-align: right;
+  color: #fff;
+  font-size: 90%;
+  padding: .25em .5em;
+  border-radius: 5px;
+  border: 2px solid #c61e40;
+  transform: skewX(-10deg);
+  background: linear-gradient(#d4536d, #c61e40) no-repeat 100% 0;
+  background-size: calc(6*(1em*90/135) + .5em) 100%;
+  box-shadow: inset calc(-6*(1em*90/135) - .5em) 0 rgba(255,255,255,0);
+  transition: .3s;
+}
+a.button1:hover:after {
+  box-shadow: inset calc(-6*(1em*90/135) - .5em) 0 rgba(255,255,255,.2);
+}
+a.button1:active:after {
+  background-image: linear-gradient(#c61e40, #d4536d);
 }
 /* aside column */
 .catalog .container {
@@ -408,13 +375,113 @@ footer .copy {
 .catalog aside + article {
 	margin-left: 260px;
 }
-.catalog h1 {
-	margin-left: 360px;
-	color:red;
+/*.catalog h1 {
+	margin-left: 160px;
+	color:#d14662;
 	font: bold 40px/1 Arial;
+}*/
+.sale {
+	display: block;
+	flex: none;
+	width: 1140px;
+	height: 300px;
+	
+	background-size: cover;
+	
+	background: url('bigsale.jpg');
+}
+/* product */
+.article-top {
+	display: flex;
+	gap:50px;
+	margin-bottom: 16px;
+}
+.gallery_desk {
+	flex: none;
+}
+.price_desk {
+	flex: 1 1 auto;
+	margin-top: 30px;
 }
 
-			
+
+
+.bigimage {
+	width: 650px;
+	height: 650px;
+	box-sizing: border-box;
+	padding: 20px;
+	border: 5px solid #007d86;
+	border-radius: 5px;
+	text-align: center;
+	margin-top: 25px;
+}
+.bigimage img {
+	cursor: pointer;
+}
+.gallery {
+	margin: 10px 0 0;
+	padding: 0 24px;
+	position: relative;
+}
+.gallery_window { /* прописываем размеры, оверфлоу и позишн именно здесь, так как это непосредственный родитель .gallery_rail */
+	width: 650px;
+	height: 63px;
+	overflow: hidden;
+	position: relative;
+}
+.gallery_rail {
+	display: flex;
+	gap: 4px;
+	position: absolute; /* движение обеспечиваем за счет свойства left */
+	top: 0;
+	left: 0;
+}
+.gallery img {
+	padding: 3px;
+	border: 1px solid #007d86;;
+	cursor: pointer; /* на этот элемент можно кликнуть */
+}
+.gallery span {
+	position: absolute;
+	color: #007d86;;
+	display: none; /* неактивные кнопки скрываем */
+	top: 7px;
+	cursor: pointer;
+	font-size: 43px;
+	line-height: 43px;
+}
+.gallery span.active {
+	display: block;
+}
+.g_left {
+	left: 5px;
+}
+.g_right {
+	right: 5px;
+}
+/* lightbox */
+.lightbox {
+	position: absolute;
+	top: 50px;
+	padding: 50px;
+	background: white;
+	left: 50%;
+	border-radius: 50px;
+}
+.lightbox button {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	top: 15px;
+	right: 15px;
+	font-size: 40px;
+	line-height: 40px;
+	color: #007d86;
+	transform: rotate(45deg);
+	border: none;
+	background: none;
+}
 
 			
 			
