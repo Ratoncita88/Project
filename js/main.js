@@ -1,6 +1,33 @@
 ﻿$(function(){
     
-    
+	
+    if($('.table').length){
+		writeTable();
+		$(document).on('click', '.quantity button', function(){
+			let delta = 1;
+			if (this.innerHTML == '-') {
+				delta = -1;
+			}
+			let id = +$(this).parents('tr').find('.id').prop('id').slice(6);
+			for (item of tovardata){
+				if (item.id == id) {
+					item.qty += delta;
+					if (item.qty <= 0) removeTovar(id);
+					break;
+				}
+			}
+			writeTable();
+		})
+		$(document).on('click', '.delete button', function(){
+			let id = +$(this).parents('tr').find('.id').prop('id').slice(6);
+			if (removeTovar(id)) writeTable();
+
+		})
+		$('#date').focus(makeCalendar);
+		$('.form button').click(function(){
+			makeOrder();
+		})
+	}
   
     
     if ($('.gallery').length) {
@@ -29,7 +56,7 @@
     }
     
     if ($('.slider_block').length) {
-        setInterval(function(){
+		setInterval(function(){
             sliderRun('toleft');
         }, 4000);
         $('.slider .to_left').click(function(){

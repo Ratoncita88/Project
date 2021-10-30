@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         
-        <title>Контакты</title>
+        <title>Корзина</title>
         
         <link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/style2.css">
@@ -13,7 +13,6 @@
         <script src="js/jquery-3.6.0.min.js"></script>
 		<script src="js/defs.js"></script>
 		<script src="js/main.js"></script>
-		<script async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ac0ace107a5a36a28590a6dd6cb2a5060496e9e42b376461c34c4fcdaffc0d5bd&amp;width=1000&amp;height=480&amp;id=yandexmap&amp;lang=ru_RU&amp;scroll=true"></script>
 		
     </head>
     
@@ -59,7 +58,7 @@
                        
 						<a href="order.html" class="button2">Оплата и доставка</a>
                         
-                        <a href="contacts.html" class="button2">Адреса магазинов</a>
+                        <a href="contacts.html" class="button2">Контакты</a>
 						 <a href="order.html" class="button2">Корзина</a>
                     </nav>
                 </div>
@@ -71,54 +70,53 @@
         </header>
         
         <main>
-		<section class="contacts">
-			<div class="container">
-			<aside>
-				<div class="news-desk">
-					<span>Новости</span> 
-						<div class="news">
-                                <h3>4 Октября 2021</h3>
-                                <a href="#">Дни здоровья ОНЛАЙН</a>
-                                
-                        </div>	
-						<div class="news">
-                                <h3>1 Октября 2021</h3>
-                                <a href="#">Специальное предложение на услуги ветклиники!</a>
-                                
-                        </div>	
-						<div class="news">
-                                <h3>24 Сентября 2021</h3>
-								<a href="#">Акция по сбору подарков для питомцев в приютах #ДариКормиЛюби</a>
-                                
-                        </div>
-								<div class="news">
-                                <h3>20 Сентября 2021</h3>
-								<a href="#">Акция «100 бонусов за отзыв</a>
-								
-                        </div>
-						<div class="news">
-                                <h3>14 Сентября 2021</h3>
-								<a href="#">Фестиваль "В Добрые руки"</a>
-								
-                        </div>													
-				</div>
-			</aside>
-		<article>
+            <section class="table">
+                <div class="container">
+                    <h1>Корзина</h1>
+                </div>
+            </section>
             
-				
-				<h2>Магазины</h2>
-				
-             
-			<section class="yandexmap">
-				<div class="container">
-					<div id="yandexmap">
-					</div>
-				</div>
-            </section> 
-		</article>	
-			</div>
-		</section>		
-    </main> 
+            <section class="table">
+                <div class="container">
+                    <table>				
+					</table>
+                </div>
+            </section>
+			<section class="form">
+                <div class="container">
+                    <form action="https://jsonplaceholder.typicode.com/posts" method="POST">
+						<fieldset>
+							<legend>Данные получателя</legend>
+							<label>Ваше имя
+							<input type="text" id="name" placeholder="Ваше имя">
+							</label>
+							<label>Телефон
+							<input type="text" id="phone">
+							</label>
+							<label>Email
+							<input type="text" id="mail">
+							</label>
+							<label> Комментарий
+							<textarea id="comment"></textarea>
+							</label>
+						</fieldset>
+						<fieldset>
+                            <legend>Дата доставки</legend>
+                            
+                            <input type="text" id="date" placeholder="ДД-ММ-ГГГГ" autocomplete="off">
+                        </fieldset>
+						<p>
+							<button type="button">Отправить</button>
+						</p>
+                        
+                        
+					</form>
+                </div>
+            </section>
+            
+            
+                
+        </main> 
          
         
         <footer>

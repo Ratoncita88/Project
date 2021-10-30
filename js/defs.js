@@ -3,43 +3,44 @@ let ajaxFlag = false;
 let gapFlag = false; // флаг нужен для блокировки новых запусков функции во время, когда она уже запущена
 let galstep, galgap; // объявляем переменные глобально, чтобы видеть их как из функции, так и вне ее
 let tovardata = [
-    {
-        id: 1,
-        qty: 2,
-        name: 'Капибара 1',
-        image: 'zver.png',
-        price: 150000,
-    },
-    {
-        id: 2,
-        qty: 10,
-        name: 'Капибара 10',
-        image: 'zver.png',
-        price: 1000,
-    },
-    {
-        id: 5,
-        qty: 1,
-        name: 'Капибара 11',
-        image: 'zver.png',
-        price: 5000000,
-    },
+	{
+		id: 1,
+		qty: 1,
+		name: 'Переноска',
+		image: 'dom_min.jpg',
+		price: 2000,
+			
+	},
+	{
+		id: 2,
+		qty: 2,
+		name: 'Корм',
+		image: 'dom_min.jpg',
+		price: 5000,
+			
+	},
+	{
+		id: 3,
+		qty: 1,
+		name: 'Поводок',
+		image: 'dom_min.jpg',
+		price: 1000,
+			
+	},
 ];
-
-
-function makeOrder() {
-    if (ajaxFlag) return;
-    ajaxFlag = true;
-    let formdata = {};
-    // собираем данные из tovardata и полей формы
-    formdata.zakaz = tovardata;
-    formdata.name = $('#name').val();
-    formdata.phone = $('#phone').val();
-    formdata.mail = $('#mail').val();
-    formdata.comment = $('#comment').val();
-    formdata.date = $('#date').val();
-    // проверяем данные на правильность заполнения. обязательные данные - name, date и phone или mail. в tovardata должен быть хотя бы один элемент (товар).
-    if (!formdata.name || !formdata.date || (!formdata.phone && !formdata.mail)) {
+function makeOrder(){
+	if (ajaxFlag) return;
+	ajaxFlag = true;
+	let formdata = {};
+	//собираем даннае из полей и tovardata
+	formdata.zakaz = tovardata;//положили заказ
+	formdata.name = $('#name').val(); 
+	formdata.phone = $('#phone').val(); 
+	formdata.mail = $('#mail').val();
+	formdata.comment = $("#comment").val(); 
+	formdata.date = $("#date").val();
+	//проверяем данные на правильность заполнения
+	if (!formdata.name || !formdata.date || (!formdata.phone && !formdata.mail)) {
         // если требования не выполнены, заканчиваем работу
         alert('Не заполнены обязательные поля!');
         ajaxFlag = false;
@@ -49,7 +50,8 @@ function makeOrder() {
         ajaxFlag = false;
         return;
     }
-    $.ajax({
+	
+	$.ajax({
         url: $('.form form').prop('action'),
         method: $('.form form').prop('method'),
         data: formdata,
@@ -70,6 +72,7 @@ function makeOrder() {
         }
     });
 }
+
 function makeCalendar() {
     let today = $('#date').val().split('-');
     if (today.length < 3) {
@@ -85,7 +88,7 @@ function makeCalendar() {
             $('.screen').remove();
         }
     });
-    makeCalendarTable(curMonth, curYear);
+	makeCalendarTable(curMonth, curYear);
     $('.screen').addClass('active');
     $('#date').trigger('blur');
 }
@@ -143,56 +146,56 @@ function makeCalendarTable(month, year) {
         $('.screen').remove();
     });
 }
-function removeTovar(id) {
-    for (let i = 0; i < tovardata.length; i++) {
-        if (tovardata[i].id == id) {
-            tovardata.splice(i, 1);
-            return true;
-        }
-    }
-    return false;
+function removeTovar(id){
+	for (let i = 0; i < tovardata.length; i++){
+		if (tovardata[i].id == id){
+			tovardata.splice(i, 1);
+			return true;
+		}
+	}
+	return false;
 }
-function writeTable() {
-    // проверяем длину tovardata. если там пусто, удаляем .table и .form, добавляем .empty с текстом "Ваша корзина пуста".
-    if (!tovardata.length) {
-        $('.table, .form').remove();
-        $('main').append('<section class="empty"><div class="container"><p>Ваша корзина пуста!</p></div></section>');
+function writeTable(){
+	 if (!tovardata.length) {
+        $('.table, .form').remove();//удаляем поля
+        $('main').append('<section class="empty"><div class="container"><p>Ваша корзина пуста!</p></div></section>');//добавляем
         return;
     }
-    let tab = $('.table table');
-    let str = `<tr>
-    <th class="id">№</th>
-    <th class="name">Наименование</th>
-    <th class="price">Цена</th>
-    <th class="quantity">Количество</th>
-    <th class="summa">Сумма</th>
-    <th class="delete"></th>
+	let tab = $('.table table');
+	let str = `<tr>
+	<th class="id">№</th>
+	<th class="name">Наименование</th>
+	<th class="price">Цена</th>
+	<th class="quantity">Количество</th>
+	<th class="summa">Сумма</th>
+	<th class="delete">.</th>
+	</tr>`;
+	for (item of tovardata){
+		str += `<tr>
+	<td class="id" id="tovar_${item.id}"></td>
+	<td class="name">${item.name}</td>
+	<td class="price">${item.price}</td>
+	<td class="quantity">
+		<div class="inner">
+			<button type="button">-</button>
+			<span class="number">${item.qty}</span>
+			<button type="button">+</button>
+		</div>
+	</td>
+	<td class="summa">${item.price * item.qty}</td>
+	<td class="delete"><button type="button">+</button></td>
 </tr>`;
-    for (item of tovardata) {
-        str += `<tr>
-    <td class="id" id="tovar_${item.id}"></td>
-    <td class="name">${item.name}</td>
-    <td class="price">${item.price}</td>
-    <td class="quantity">
-        <div class="inner">
-            <button type="button">-</button>
-            <span class="number">${item.qty}</span>
-            <button type="button">+</button>
-        </div>
-    </td>
-    <td class="summa">${item.price * item.qty}</td>
-    <td class="delete"><button type="button">+</button></td>
-</tr>`;
-    }
-    tab.html(str);
-    for (i = 1; i < tab.find('.id').length; i++) {
-        tab.find('.id').eq(i).html(i);
-    }
-    let sum = 0;
-    tab.find('td.summa').each(function(){
-        sum += +$(this).html();
-    })
-    tab.append(`<tr><th colspan="2"></th><th colspan="2">Итого:</th><th colspan="2" class="itog">${sum}</th></tr>`);
+	}
+	tab.html(str);
+	for (i = 1; i < tab.find('.id').length; i++){
+		tab.find('.id').eq(i).html(i);
+	}
+	let sum = 0;
+	tab.find('td.summa').each(function(){
+		sum += +$(this).html()
+	})
+	tab.append(`<tr><th colspan="2"></th><th colspan="2">Итого:</th><th colspan="2"
+	class="itog">${sum}</th></tr>`);
 }
 function lightbox(aim){
     let src = $(aim).prop('src').split('big').join('max');
