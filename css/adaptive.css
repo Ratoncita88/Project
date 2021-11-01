@@ -3,7 +3,7 @@
 		width: 1200px;
 	}
 	.item-desk {
-		grid-template-columns: repeat(4, 200px);
+		grid-template-columns: repeat(3, 200px);
 	}
 }
 @media screen and (max-width: 1250px) {
@@ -11,8 +11,15 @@
 		width: 1000px;
 	}
 	.item-desk {
-		grid-template-columns: repeat(3, 200px);
+		grid-template-columns: repeat(2, 200px);
 	}
+	.sale {
+	display: block;
+	flex: none;
+	width: 900px;
+	height: 250px;
+	background-size: cover;
+	background: url('../images/bigsale2new.jpg')no-repeat;
 }
 @media screen and (max-width: 1050px) {
 	.container {

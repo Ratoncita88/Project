@@ -14,7 +14,24 @@
 		<script src="js/defs.js"></script>
 		<script src="js/main.js"></script>
 		<script async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ac0ace107a5a36a28590a6dd6cb2a5060496e9e42b376461c34c4fcdaffc0d5bd&amp;width=1000&amp;height=480&amp;id=yandexmap&amp;lang=ru_RU&amp;scroll=true"></script>
-		
+		<script>
+		$(document).ready(function(){
+			$(".set > a").on("click", function(){
+			if($(this).hasClass('active')){
+			$(this).removeClass("active");
+			$(this).siblings('.content').slideUp(200);
+			$(".set > a i").removeClass("fa-minus").addClass("fa-plus");
+			}else{
+			$(".set > a i").removeClass("fa-minus").addClass("fa-plus");
+			$(this).find("i").removeClass("fa-plus").addClass("fa-minus");
+			$(".set > a").removeClass("active");
+			$(this).addClass("active");
+			$('.content').slideUp(200);
+			$(this).siblings('.content').slideDown(200);
+			}
+			});
+		});
+		</script>
     </head>
     
     <body>
@@ -33,13 +50,15 @@
 					
 					<p>Войти</p>
 				
-					<a href="order.html" class="headerlink1" title="Корзина"></a>
+					<a href="order.html" class="headerlink" title="Корзина"></a>
 					
 					<p>Корзина</p>
 					</div>
 				</div>
 			</section>
 			
+			
+		
 			<section>
 				
                 <div class="container">
@@ -48,7 +67,7 @@
                         <a href="catalog.html" class="button2">Каталог товаров</a>
 						
                         <a href="index.html" class="button2">Главная страница</a>
-                                               
+                        
                         <a href="item.html" class="button2">Товар</a>
                         
 						<a href="faq.html" class="button2">Вопросы и ответы</a>
@@ -60,10 +79,13 @@
                 </div>
 				
             </section>
-		 
+				
+            </div>   
+        
         </header>
         
         <main>
+			
 		<section class="contacts">
 			<div class="container">
 			<aside>
@@ -97,20 +119,57 @@
 				</div>
 			</aside>
 		<article>
-            
+         
+			<section class="faq">
+				<div class="ques"> <h1>Вопросы и ответы</h1></div>
+				<div class="accordion-container">
 				
-				<h2>Магазины</h2>
-				
-             
-			<section class="yandexmap">
-				<div class="container">
-					<div id="yandexmap">
-					</div>
+				<div class="set">
+				<a href="#" class="accordionTitle">
+				Как активировать бонусную карту?
+				<i class="fa fa-plus"></i>
+				</a>
+				<div class="content">
+				<p class="ans">По телефону горячей линии 8 800 555-22-11</p>
 				</div>
-            </section> 
-		</article>	
-			</div>
-		</section>		
+				</div>
+				<div class="set">
+				<a href="#" class="accordionTitle">
+				Принимаете ли Вы животных на продажу?
+				<i class="fa fa-plus"></i>
+				</a>
+				<div class="content">
+				<p class="ans"> Да, но только от официальных заводчиков, располагающих необходимым пакетом документов..</p>
+				</div>
+				</div>
+				<div class="set">
+				<a href="#" class="accordionTitle">
+				Отличаются ли цены в розничной сети и Интернет-магазине?
+				<i class="fa fa-plus"></i>
+				</a>
+				<div class="content">
+				<p class="ans"> На каждую позицию цена индивидуальна и может как совпадать, так и отличаться от цены в Интернете. По цене могут проконсультировать сотрудники единой справочной.</p>
+				</div>
+				</div>
+				<div class="set">
+				<a href="#" class="accordionTitle">
+				Могу ли я оплатить заказ на сайте?
+				<i class="fa fa-plus"></i>
+				</a>
+				<div class="content">
+				<p class="ans"> Да, в нашем интернет-магазине Вы можете оплатить заказ с помощью банковских карт платежных систем Visa, MasterCard, МИР.</p>
+				</div>
+				</div>
+				<div class="set">
+				<a href="#" class="accordionTitle">
+				Где можно приобрести подарочную карту?
+				<i class="fa fa-plus"></i>
+				</a>
+				<div class="content">
+				<p> Во всех розничных магазинах сети "Бетховен".</p>
+				</div>
+				</div>
+				</section>		
     </main> 
          
         
@@ -125,10 +184,8 @@
 					<li><a href="#">Новости</a> </li>
 					<li><a href="#">Партнеры</a> </li>
                     <li><a href="#">Франчайзинг</a> </li>
-					
-					
+				
                 </ul>
-			
 			
 				<ul> <li class="heading">Каталог товаров</li>
                     <li><a href="#">Для собак</a></li>
@@ -153,6 +210,7 @@
              
 			   <div class="container4">
 					<p class="heading">Будьте всегда в курсе!</p><br>
+					
 					<input type="text" id="mail" name="mail" placeholder="Ваш e-mail" autocomplete="off">
 					<input type="submit" name="OK" class="email" value="&#8594;">
                    
@@ -169,6 +227,7 @@
 					</div>
 					<p class="copy">&copy; 2021 All rights reserved.</p>
 			</div>
+			    
         </footer>
 		
     </body>

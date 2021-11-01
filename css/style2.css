@@ -12,6 +12,7 @@ a.button2 {
   border-radius: 5px;
   box-shadow: 0 0 0 1px #ddd inset, 0 1px 1px #fff;
   background: #007d86;
+  cursor: pointer;
 }
 a.button2:hover {
   background: #dcdcdc linear-gradient(#fff, #dcdcdc);
@@ -19,6 +20,34 @@ a.button2:hover {
   color: #007d86;
 }
 a.button2:active {
+  background: none;
+    box-shadow: 0 0 0 1px #bbb inset, 0 1px 3px rgba(0,0,0,.5) inset, 0 1px 2px #fff;
+	color: #007d86;
+}
+/*кнопка отправить*/
+#dos {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 40px;
+  line-height: 2em;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  outline: none;
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px #ddd inset, 0 1px 1px #fff;
+  background: #007d86;
+  font: 15px/24px "Open Sans", Arial, sans-serif;
+  cursor: pointer;
+}
+#dos:hover {
+  background: #dcdcdc linear-gradient(#fff, #dcdcdc);
+  box-shadow: 0 0 0 1px #aaa inset, 0 1px 1px #aaa;
+  color: #007d86;
+}
+#dos:active {
   background: none;
     box-shadow: 0 0 0 1px #bbb inset, 0 1px 3px rgba(0,0,0,.5) inset, 0 1px 2px #fff;
 	color: #007d86;

@@ -28,11 +28,11 @@
 					
 					<div> &#128222; +7&nbsp;495&nbsp;120-22-11</div>
 				
-					<a href="#" class="headerlink" title="Личный кабинет"><img src="images/enter.png" alt="enter"> </a>
+					<a href="#" class="headerlink" title="Личный кабинет"></a>
 					
 					<p>Войти</p>
 				
-					<a href="order.html" class="headerlink" title="Корзина"><img src="images/basket3.jpg" alt="basket"> </a>
+					<a href="order.html" class="headerlink1" title="Корзина"></a>
 					
 					<p>Корзина</p>
 					</div>
@@ -46,20 +46,17 @@
                 <div class="container">
                     <nav class="topmenu">
 						
-						
                         <a href="catalog.html" class="button2">Каталог товаров</a>
 						
                         <a href="index.html" class="button2">Главная страница</a>
                         
-                        
-                        
                         <a href="item.html" class="button2">Товар</a>
                         
-                       
-						<a href="order.html" class="button2">Оплата и доставка</a>
+						<a href="faq.html" class="button2">Вопросы и ответы</a>
                         
                         <a href="contacts.html" class="button2">Контакты</a>
-						 <a href="order.html" class="button2">Корзина</a>
+						
+						<a href="order.html" class="button2">Корзина</a>
                     </nav>
                 </div>
 				
@@ -85,28 +82,39 @@
 			<section class="form">
                 <div class="container">
                     <form action="https://jsonplaceholder.typicode.com/posts" method="POST">
+						<p>Данные получателя<p>
 						<fieldset>
-							<legend>Данные получателя</legend>
-							<label>Ваше имя
-							<input type="text" id="name" placeholder="Ваше имя">
+							
+							
+							<label class="custom-field">
+							<input type="text" id="name" required/>
+							<span class="placeholder">Ваше имя</span>
 							</label>
-							<label>Телефон
-							<input type="text" id="phone">
+							
+							<label class="custom-field">
+							<input type="text" id="phone" required/>
+							<span class="placeholder">Телефон</span>
 							</label>
-							<label>Email
-							<input type="text" id="mail">
+							
+							<label class="custom-field">
+							<input type="text" id="mail" required/>
+							<span class="placeholder">Email</span>
 							</label>
-							<label> Комментарий
-							<textarea id="comment"></textarea>
+							
+							<label class="custom-field"> 
+							<input type="text" id="comment" required/>
+							<span class="placeholder">Комментарий</span>
 							</label>
+							
 						</fieldset>
-						<fieldset>
-                            <legend>Дата доставки</legend>
-                            
+						<p>Дата доставки<p>
+						<fieldset class="dostavka">
+							
                             <input type="text" id="date" placeholder="ДД-ММ-ГГГГ" autocomplete="off">
+							
                         </fieldset>
 						<p>
-							<button type="button">Отправить</button>
+							<button type="button" id="dos">Отправить</button>
 						</p>
                         
                         
@@ -165,14 +173,16 @@
 				</div>	
              
             </div>
-			<div class="media">
-				<p>Оставайтесь на связи</p> <br>
-                    <a href="#" class="footerlink" title="Вконтакте"><img src="images/vk.png" alt="vk"> </a>
+			<<div class="media">
+				<div><p>Оставайтесь на связи</p></div>
+                    <div>
+					<a href="#" class="footerlink" title="Вконтакте"><img src="images/vk.png" alt="vk"> </a>
                     <a href="#" class="footerlink" title="Instagram"><img src="images/inst.png" alt="inst"> </a>
 					<a href="#" class="footerlink" title="Facebook"><img src="images/fb.png" alt="fb"> </a>
 					<a href="#" class="footerlink" title="Youtube"><img src="images/youtube.png" alt="youtube"> </a>
-                </div>
-			    <p class="copy">&copy; 2021 All rights reserved.</p>
+					</div>
+					<p class="copy">&copy; 2021 All rights reserved.</p>
+			</div>
         </footer>
 		
     </body>
