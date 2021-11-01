@@ -329,11 +329,7 @@ footer li.heading {
 	}
 	
 .media{
-	display: flex;
-	flex-direction: column;
-	gap: 2px;
-	position: relative;
-	left: 550px;
+	margin-left: 550px;
 	
 	
 }
