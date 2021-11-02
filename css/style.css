@@ -77,8 +77,13 @@ main {
 	margin-top: 2px;
 	background: url('../images/enter.png') left top no-repeat;
 }
+.headerlink_min,
+.headerlink1_min{
+	display: none;
+	
+}
  .headerlink1 {
-	 display: block;
+	display: block;
 	flex: none;
 	width: 45px;
 	height: 45px;
@@ -89,11 +94,12 @@ main {
 	flex:1 1 auto;
 	background: #e5e5e5;
 	height: 50px;
-	
 	border: 1px solid black;
 	border-radius: 5px;	
-	
-	
+}
+.searchline_min{
+	display:none;	
+
 }
 /* topmenu */
 .topmenu {
@@ -191,15 +197,24 @@ main {
 	width: 1290px;
 	height: 360px;
 }
-.slider .container {
+.slider2 .container,
+.slider2_desk,
+.slider2_block {
+	width: 717px;
+	height: 200px;
+}
+.slider .container,
+.slider2 .container {
 	padding: 16px 78px;
 	position: relative;
 }
-.slider_desk {
+.slider_desk,
+.slider2_desk {
 	overflow: hidden;
 	position: relative;
 }
-.slider_block {
+.slider_block,
+.slider2_block {
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -208,7 +223,8 @@ main {
 	opacity: 0;
 	transition: opacity 3s step-start, left 3s ease;*/
 }
-.slider_block.curr {
+.slider_block.curr,
+.slider2_block.curr {
 	z-index: 1;
 	/*opacity: 1;
 	left: 0;
@@ -246,22 +262,67 @@ main {
 	top: calc(50% - 23px);
 	cursor: pointer;
 }
-.slider .to_left {
+.slider2 button {
+	position: absolute;
+	background: red;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	font-size: 16px;
+	line-height: 23px;
+	height: 23px;
+	width: 23px;
+	top: calc(50% - 23px);
+	cursor: pointer;
+}
+.slider .to_left,
+.slider2 .to_left {
 	left: 16px;
 }
-.slider .to_right {
+
+.slider .to_right,
+.slider2 .to_right {
 	right: 16px;
 }
+.slider {
+		display: block;
+			}
+.slider2 {
+		display: none;
+			}
 
 .gallery {
 		display: flex;
 		justify-content: space-around;
+		height: 280px;
+		gap: 5px;
+		}
+.gal_unit1 {
+		display: block;
+		height: 280px;
+		width: 390px;
+		background: url('../images/gal1.jpg');
 		
-	}
-.gal_unit {
-		width: 350px;
-		flex: none;
 }
+.gal_unit2 {
+		display: block;
+		height: 280px;
+		width: 390px;
+		background: url('../images/gal2.jpg');
+}
+.gal_unit3 {
+		display: block;
+		height: 280px;
+		width: 390px;
+		background: url('../images/gal3.jpg');
+}
+.gallery_min {
+		display: none;
+		justify-content: space-around;
+		height: 140px;
+		gap: 5px;
+		}
+
 
 /*footer button {
 		width: 237px;
@@ -449,18 +510,18 @@ a.button1:active:after {
 }
 .gallery {
 	margin: 10px 0 0;
-	padding: 0 24px;
+	padding: 0 27px;
 	position: relative;
 }
 .gallery_window { /* прописываем размеры, оверфлоу и позишн именно здесь, так как это непосредственный родитель .gallery_rail */
-	width: 650px;
+	width: 596px;
 	height: 63px;
 	overflow: hidden;
 	position: relative;
 }
 .gallery_rail {
 	display: flex;
-	gap: 4px;
+	gap: 7px;
 	position: absolute; /* движение обеспечиваем за счет свойства left */
 	top: 0;
 	left: 0;
@@ -609,6 +670,10 @@ h1 {
 	cursor: pointer;
 }
 /*данные получателя*/
+form {
+	display: inline-block;
+}
+
 p {
 	font: 16px/24px "Open Sans", Arial, sans-serif;
 	font-weight:bold;
@@ -618,68 +683,63 @@ p {
 	margin-bottom: 20px;
 }
 fieldset {
+	display: flex;
 	border-color:#007d86;
-	margin-left: 10px;
-	/*flex: none;
-	width: 900px;*/
+	gap: 10px;
+	
 }
 /**, *::before, *::after {
   box-sizing: border-box;
 }*/
-input,
- {
+input {
   border: none;
   appearance: none;
   background: #f2f2f2;
   border-radius: 3px;
   outline: none;
+  margin-left: 5px;
+  margin-right: 5px;
  }
- input:focus::placeholder {
+ /*input:focus::placeholder {
 	 color: transparent;
- }
- input::placeholder {
+ }*/
+ /*input::placeholder {
 	 color: #aaa;
 	 transition: color 0.3s ease;
- }
+ }*/
 .custom-field{
 	position:relative;
 	font-size: 14px;
-	padding-top: 20px;
-	margin-bottom: 5px;
 }
 .custom-field input,
 .dostavka input{
   border: none;
   appearance: none;
   background: #f2f2f2;
- 
   border-radius: 3px;
   width: 250px;
   height: 40px;
   outline: none;
   font-size: 14px;
+  margin-left: 10px;
+  margin-right: 10px;
  }
  .dostavka{
-	width: 220px; 
+	display: inline-block;
+	/*width: 220px; */
  }
 .custom-field .placeholder{
 	position: absolute;
-	left: 12px;
-	top: calc(50% + 10px);
-	transform: translateY(-40%);
+	left: 10px;
+	top: calc(50% - 12px);
 	color: #aaa;
-	transition:
-		top 0.3s ease,
-		font-size 0.3s ease,
-		color 0.3s ease;
+	transition: opacity 0.5s ease;
 }
 .custom-field input:valid + .placeholder,
 .custom-field input:focus + .placeholder{
-	top: 10px;
-	font-size: 12px;
-	color: #222;
+	opacity: 0;
 }
- 
+
 /*datepicker*/
 #calendar {
 	position: absolute;

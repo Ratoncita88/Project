@@ -55,7 +55,7 @@
         setInterval(retimer, 500);
     }
     
-    if ($('.slider_block').length) {
+    /*if ($('.slider_block').length) {
 		setInterval(function(){
             sliderRun('toleft');
         }, 4000);
@@ -65,7 +65,37 @@
         $('.slider .to_right').click(function(){
             sliderRun('toright');
         });
+    }*/
+		if ($('.slider_block').length) {
+        slideFlag['slider'] = false;
+        setInterval(function(){
+            sliderRun('slider', 'toleft');
+        }, 4000);
+        $('.slider .to_left').click(function(){
+            sliderRun('slider', 'toleft');
+        });
+        $('.slider .to_right').click(function(){
+            sliderRun('slider', 'toright');
+        });
+        $('.slider .points span').click(function(){
+            if (!$(this).hasClass('active')) {
+                sliderRun('slider', $('.slider .points span').index(this));
+            }
+        });
     }
+    if ($('.slider2_block').length) {
+        slideFlag['slider2'] = false;
+        setInterval(function(){
+            sliderRun('slider2','toleft');
+        }, 4000);
+        $('.slider2 .to_left').click(function(){
+            sliderRun('slider2','toleft');
+        });
+        $('.slider2 .to_right').click(function(){
+            sliderRun('slider2','toright');
+        });
+    }
+
 })
 
 

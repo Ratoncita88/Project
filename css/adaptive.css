@@ -1,29 +1,161 @@
-﻿@media screen and (max-width: 1450px) {
+﻿@media screen and (max-width: 1500px) {
 	.container {
 		width: 1200px;
 	}
-	.item-desk {
-		grid-template-columns: repeat(3, 200px);
+	a.button2 {
+		width: 150px;
 	}
+	.topmenu{
+		margin-left: 50px;
+	}
+	
+	.discount1 {
+		display: none;	
+	}
+	
+	.item-desk {
+		grid-template-columns: repeat(4, 200px);
+	}
+	
 }
 @media screen and (max-width: 1250px) {
 	.container {
 		width: 1000px;
 	}
+	footer{
+		height: 550px;
+	}
+	footer .container{
+        width: 1000px;
+        display: flex;
+        align-items: center;
+		flex-wrap: wrap;
+        justify-content: space-evenly;
+	}
+	.media{
+		margin-left: 420px;
+	}
+	a.button2 {
+		width: 120px;
+		font: 14px/24px "Open Sans", Arial, sans-serif;
+	}
+	.enter {
+		display:none;
+	}
+	.discount, 
+	.retaimer, 
+	.sept, 
+	.num { 
+		font: bold 30px/1 Arial;
+		vertical-align: middle;
+	}
+	.slider {
+		display: none;
+	}
+	.slider2 {
+		display: block;
+		float: center;
+	}
+	.gallery {
+		display: none;
+		justify-content: space-around;
+		height: 140px;
+		gap: 5px;
+	}
+	.gallery_min {
+		display: flex;
+		justify-content: center;
+		height: 140px;
+		gap: 15px;
+	}
+	.gal_unit1min {
+		display: block;
+		height: 140px;
+		width: 195px;
+		background: url('../images/gal1min.jpg') no-repeat;
+	}
+	.gal_unit2min {
+		display: block;
+		height: 140px;
+		width: 195px;
+		background: url('../images/gal2min.jpg') no-repeat;
+	}
+	.gal_unit3min {
+		display: block;
+		height: 140px;
+		width: 195px;
+		background: url('../images/gal3min.jpg') no-repeat;
+	}
 	.item-desk {
-		grid-template-columns: repeat(2, 200px);
+		grid-template-columns: repeat(3, 200px);
 	}
 	.sale {
-	display: block;
-	flex: none;
-	width: 900px;
-	height: 250px;
-	background-size: cover;
-	background: url('../images/bigsale2new.jpg')no-repeat;
-}
+		display: block;
+		flex: none;
+		width: 900px;
+		height: 250px;
+		background-size: cover;
+		background: url('../images/bigsale2new.jpg')no-repeat;
+    }
 @media screen and (max-width: 1050px) {
+	header{
+		height: 100px;
+	}
+	a.button2 {
+		width: 100px;
+		height: 40px;
+		font: 12px/24px "Open Sans", Arial, sans-serif;
+	}
+	.topmenu{
+		margin-left: 5px;
+	}
+	.logo{
+		display:none;
+	}
+	.logomin {
+		display: block;
+		flex: none;
+		width: 118px;
+		height: 59px;
+		background: url('../images/logo_min.jpg') left top no-repeat;
+		background-size: cover;
+	}
+	.searchline{
+		height: 30px;
+	}
+	.phone{
+		font: 14px/20px "Open Sans", Arial, sans-serif;
+	}
+	.headerlink,
+	.headerlink1{
+		display: none;
+	}
+	.headerlink_min{
+		display: block;
+		flex: none;
+		width: 30px;
+		height: 30px;
+		margin-top: 2px;
+		background: url('../images/enter_min.png') left top no-repeat;
+	}
+	.headerlink1_min {
+		display: block;
+		flex: none;
+		width: 30px;
+		height: 30px;
+		background-image: url('../images/basket_min.png');
+	}
 	.container {
 		width: 800px;
+	}
+	.discount {
+		display:none;
+	}
+	.retaimer, 
+	.sept, 
+	.num,
+	.toptext{ 
+		margin-top: 40px;
 	}
 	.catalog aside {
 		width: 140px;
@@ -34,11 +166,54 @@
 	.catmenu {
 		font-size: 16px;
 	}
+	.item-desk {
+		grid-template-columns: repeat(2, 200px);
+	}
 }
 @media screen and (max-width: 850px) {
 	.container {
 		width: 650px;
 	}
+	footer{
+		height: 950px;
+	}
+	footer .container{
+        width: 650px;
+        display: flex;
+        align-items: center;
+		flex-direction: column;
+	}
+	.media{
+		margin-left: 250px;
+	}
+	.searchline{
+		display:none;
+	}
+	.searchline_min{
+		display: flex;
+		flex:1 1 auto;
+		background: #e5e5e5;
+		height: 30px;
+		border: 1px solid black;
+		border-radius: 5px;	
+		width: 300px;
+		margin-top: 20px;
+	}
+	a.button2 {
+		width: 150px;
+	}
+	header{
+		height: 200px;
+	}
+	.gallery_min {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 200px;
+		height: 450px;
+		gap: 15px;
+		margin-left: 320px;
+	}	
 	.catalog aside {
 		position: relative;
 	}
@@ -53,5 +228,28 @@
 		left: 0;
 		top: 72px;
 		width: 140px;
+	}
+}
+@media screen and (max-width: 600px) {
+	.container {
+		width: 550px;
+	}
+	
+	.media{
+		margin-left: 100px;
+	}
+}
+@media screen and (max-width: 400px) {
+	.container {
+		width: 380px;
+	}
+	.topmenu{
+		margin-left: 50px;
+	}
+	a.button2 {
+		width: 100px;
+	}
+	header{
+		height: 300px;
 	}
 }

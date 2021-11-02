@@ -1,4 +1,4 @@
-﻿﻿let slideFlag = false;
+﻿﻿let slideFlag = {};
 let ajaxFlag = false;
 let gapFlag = false; // флаг нужен для блокировки новых запусков функции во время, когда она уже запущена
 let galstep, galgap; // объявляем переменные глобально, чтобы видеть их как из функции, так и вне ее
@@ -247,7 +247,7 @@ function galSlide(direction) {
         gapFlag = false; // опускаем флаг - наш вызов отработал, можно делать новые вызовы
     });
 }
-function sliderRun(direction) {
+/*function sliderRun(direction) {
     if (slideFlag) return;
     slideFlag = true;
     let hlp = $('.slider_block').index($('.slider_block.curr'));
@@ -269,8 +269,39 @@ function sliderRun(direction) {
         return;
     }
     $('.slider_block.curr').animate({left: next}, 2000, function() {
-        $('.slider_block').eq(hlp).removeClass('curr').prop('style','');
+        $('.slider_block').eq(hlp).removeClass('curr');
         slideFlag = false;
+    });
+}*/
+function sliderRun(slideclass, direction) {
+    if (slideFlag[slideclass]) return;
+    slideFlag[slideclass] = true;
+    let hlp = $('.' + slideclass + '_block').index($('.' + slideclass + '_block.curr'));
+    let width = $('.' + slideclass + '_block.curr').width();
+    let next;
+    if (direction == 'toleft') {
+        next = hlp + 1;
+        if (next > $('.' + slideclass + '_block').length - 1) next -= $('.' + slideclass + '_block').length;
+        $('.' + slideclass + '_block').eq(next).css('left', width + 'px').addClass('curr');
+        $('.' + slideclass + ' .points span').eq(next).addClass('active');
+        next = '-=' + width;
+    } else if (direction == 'toright') {
+        next = hlp - 1;
+        if (next < 0) next += $('.' + slideclass + '_block').length;
+        $('.' + slideclass + '_block').eq(next).css('left', -width + 'px').addClass('curr');
+        $('.' + slideclass + ' .points span').eq(next).addClass('active');
+        next = '+=' + width;
+    } else { // direction == n
+        
+        
+        
+        
+        
+    }
+    $('.' + slideclass + ' .points span').eq(hlp).removeClass('active');
+    $('.' + slideclass + '_block.curr').animate({left: next}, 2000, function() {
+        $('.' + slideclass + '_block').eq(hlp).removeClass('curr');
+        slideFlag[slideclass] = false;
     });
 }
 function retimer() {
