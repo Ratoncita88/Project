@@ -6,7 +6,7 @@ body {
     min-height: 100%;
 	display: flex;
     flex-direction: column;
-	font: 15px/24px "Open Sans", Arial, sans-serif;
+	font: 15px/24px Arial, sans-serif;
 }
 a {
 	text-decoration: none;
@@ -22,7 +22,7 @@ header {
 	height: 200px;
 	flex: none;
 	background: white;
-	font: 15px/24px "Open Sans", Arial, sans-serif;
+	font: 15px/24px Arial, sans-serif;
 	color: #555;
 			
 }
@@ -31,7 +31,7 @@ footer {
 	height: 400px;
 	flex: 0 0 auto;
 	background: #e5e5e5;
-	font: 15px/24px "Open Sans", Arial, sans-serif;
+	font: 15px/24px Arial, sans-serif;
 	color: #555;
 }
 main {
@@ -143,9 +143,7 @@ main {
 	
 }
 .retaimer {
-	/*border-left: 1px solid #fff;
-	padding: 24px 0 0 24px;
-	margin-left: 24px;*/
+	
 	position: relative;
 	text-align: center;
 }
@@ -194,9 +192,15 @@ main {
 .slider .container,
 .slider_desk,
 .slider_block {
-	width: 1290px;
+	
 	height: 360px;
 }
+.slider_desk,
+.slider_block {
+	width: 1290px;
+	
+}
+
 .slider2 .container,
 .slider2_desk,
 .slider2_block {
@@ -261,6 +265,7 @@ main {
 	width: 46px;
 	top: calc(50% - 23px);
 	cursor: pointer;
+	
 }
 .slider2 button {
 	position: absolute;
@@ -275,12 +280,18 @@ main {
 	top: calc(50% - 23px);
 	cursor: pointer;
 }
-.slider .to_left,
+.slider .to_left {
+	left: 12px;
+}
+.slider .to_right {
+	right: 12px;
+}
+
 .slider2 .to_left {
 	left: 16px;
 }
 
-.slider .to_right,
+
 .slider2 .to_right {
 	right: 16px;
 }
@@ -290,7 +301,16 @@ main {
 .slider2 {
 		display: none;
 			}
-
+.slider3 {
+		display: none;
+			}
+.slider4 {
+		display: none;
+			}
+.container_foot
+ {
+		display: none;
+			}
 .gallery {
 		display: flex;
 		justify-content: space-around;
@@ -345,7 +365,7 @@ main {
 	}
 	
 	footer p {
-		font: bold 15px/24px "Open Sans", Arial, sans-serif;
+		font: bold 15px/24px Arial, sans-serif;
 		padding-left: 25px;
 	}
 	
@@ -385,14 +405,15 @@ footer input {
 		
 	}
 footer li.heading {
-		font: bold 15px/24px "Open Sans", Arial, sans-serif;
+		font: bold 15px/24px Arial, sans-serif;
 		padding-left: 25px;
 	}
 	
 .media{
 	margin-left: 550px;
-	
-	
+}
+.media_min{
+	display:none;
 }
 footer .copy {
 		opacity: 0.4;
@@ -472,11 +493,13 @@ a.button1:active:after {
 }
 .catalog aside + article {
 	margin-left: 260px;
+	
 }
 
 .sale {
 	display: block;
 	flex: none;
+	margit-top: 100px;
 	width: 1140px;
 	height: 300px;
 	background-size: cover;
@@ -487,6 +510,7 @@ a.button1:active:after {
 	display: flex;
 	gap:50px;
 	margin-bottom: 16px;
+	height: 750px;
 }
 .gallery_desk {
 	flex: none;
@@ -494,6 +518,11 @@ a.button1:active:after {
 .price_desk {
 	flex: 1 1 auto;
 	margin-top: 30px;
+}
+.product {
+	display:block;
+	position:relative;
+	margin: 0 200px;
 }
 .bigimage {
 	width: 650px;
@@ -550,9 +579,15 @@ a.button1:active:after {
 	right: 5px;
 }
 .description_desk p {
-	font:16px/24px "Open Sans", Arial, sans-serif;
+	font:16px/24px Arial, sans-serif;
 	font-weight:normal;
 	color: #000;
+}
+.article-top_min {
+	display:none;
+}
+.article-top_min1{
+	display:none;
 }
 /* lightbox */
 .lightbox {
@@ -675,7 +710,7 @@ form {
 }
 
 p {
-	font: 16px/24px "Open Sans", Arial, sans-serif;
+	font: 16px/24px Arial, sans-serif;
 	font-weight:bold;
 	position: relative;
 	margin-top: 20px;
@@ -688,9 +723,7 @@ fieldset {
 	gap: 10px;
 	
 }
-/**, *::before, *::after {
-  box-sizing: border-box;
-}*/
+
 input {
   border: none;
   appearance: none;
@@ -700,13 +733,7 @@ input {
   margin-left: 5px;
   margin-right: 5px;
  }
- /*input:focus::placeholder {
-	 color: transparent;
- }*/
- /*input::placeholder {
-	 color: #aaa;
-	 transition: color 0.3s ease;
- }*/
+ 
 .custom-field{
 	position:relative;
 	font-size: 14px;
@@ -747,12 +774,12 @@ input {
 	left: 50%;
 	margin: -250px 0 0 -250px;
 	width: 500px;
-
 	padding: 50px;
 	background: #007d86;
 	left: 50%;
 	border-radius: 50px;
 }
+
 .dp_header {
 	text-align: center;
 	height: 34px;
@@ -834,6 +861,8 @@ h2{
 	font-size: 2.133em;
     line-height: 30px;
     font-weight: bold;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 .news-desk span	{
 	font-size: 1.143em;
@@ -858,7 +887,7 @@ h3{
 	border: 1px solid #f2f2f2;
     border-radius: 2px;
 	margin-left: 20px;
-	margin-top: 40px;
+	margin-top: 55px;
 	width: 200px;
 	gap: 15px;
 }
